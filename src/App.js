@@ -1,8 +1,8 @@
 import React from "react";
 import { Provider } from './state/Provider';
-import { Filters } from './components/Filters';
-import { Results } from './components/Results';
-import { UserActions } from './components/UserActions';
+import { Filters } from './components/filters/index';
+import { Results } from './components/results/index';
+import { UserActions } from './components/userActions/index';
 
 /**
  * all components are constructed inside of the Provider

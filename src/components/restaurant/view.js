@@ -1,6 +1,6 @@
 import React, { useContext} from "react";
-import { RestaurantContext } from '../state/Provider';
-import { ratings, prices } from '../data';
+import { RestaurantContext } from '../../state/Provider';
+import { ratings, prices } from '../../data';
 
 /**
  * writes out individual restaurant listing

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { RestaurantContext } from '../state/Provider';
-import { FiltersView } from '../views/Filters';
+import { RestaurantContext } from '../../state/Provider';
+import { FiltersView } from './view';
 
 /**
  * returns the filter options
