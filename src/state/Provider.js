@@ -35,20 +35,20 @@ export const Provider = ({ children }) => {
         price: state.price,
         selectedRestaurant: state.selectedRestaurant,
         editMode: state.editMode,
-        setRestaurants: value => {
-            dispatch({ type: actions.SET_RESTAURANTS, value });
+        setRestaurants: payload => {
+            dispatch({ type: actions.SET_RESTAURANTS, payload });
         },
-        setRating: value => {
-            dispatch({ type: actions.SET_RATING, value });
+        setRating: payload => {
+            dispatch({ type: actions.SET_RATING, payload });
         },
-        setPrice: value => {
-            dispatch({ type: actions.SET_PRICE, value });
+        setPrice: payload => {
+            dispatch({ type: actions.SET_PRICE, payload });
         },
-        setSelectedRestaurant: value => {
-            dispatch({ type: actions.SET_SELECTED_RESTAURANT, value });
+        setSelectedRestaurant: payload => {
+            dispatch({ type: actions.SET_SELECTED_RESTAURANT, payload });
         },
-        setEditMode: value => {
-            dispatch({ type: actions.SET_EDIT_MODE, value });
+        setEditMode: payload => {
+            dispatch({ type: actions.SET_EDIT_MODE, payload });
         },
         reset: () => {
             dispatch({ type: actions.RESET });
