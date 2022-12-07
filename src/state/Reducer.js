@@ -11,6 +11,7 @@ import { initialState } from './Provider';
  * @return {*}
  */
 export function reducer(state, action) {
+    console.log('reducer action', action);
     switch (action.type) {
         case actions.SET_RESTAURANTS:
             return { ...state, restaurants: action.value };
@@ -21,7 +22,6 @@ export function reducer(state, action) {
         case actions.SET_SELECTED_RESTAURANT:
             return { ...state, selectedRestaurant: action.value };
         case actions.SET_EDIT_MODE:
-            console.log('SET_EDIT_MODE action', action);
             return { ...state, editMode: action.value };
         case actions.RESET:
             return initialState;

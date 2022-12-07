@@ -23,7 +23,7 @@ export const Restaurant = ({ restaurant }) => {
      * @param {obj} restaurant
      */
     const handleUpdateSelectedRestaurant = (key, value) => {
-        console.log('edit to this restaurant', key, value);
+        // console.log('edit to this restaurant', key, value);
         setSelectedRestaurant({...selectedRestaurant, [key]: value});
     }
 
@@ -31,13 +31,15 @@ export const Restaurant = ({ restaurant }) => {
      * save edits to restaurant
      */
     const handleSaveRestaurant = () => {
-        console.log('save edits to this restaurant', selectedRestaurant);
-        if (selectedRestaurant.name) {
-            let pos = restaurants.findIndex(e => e.id === selectedRestaurant.id);
+        let thisRestaurant = {...selectedRestaurant}
+        delete thisRestaurant.isNew;
+        console.log('save edits to this restaurant', thisRestaurant);
+        if (thisRestaurant.name) {
+            let pos = restaurants.findIndex(e => e.id === thisRestaurant.id);
             let newRestaurants = [...restaurants];
-            newRestaurants[pos] = selectedRestaurant
+            newRestaurants[pos] = thisRestaurant
             setRestaurants(newRestaurants);
-            handleCancelEditRestaurant();
+            setSelectedRestaurant({});
         }
     }
 
@@ -49,14 +51,19 @@ export const Restaurant = ({ restaurant }) => {
         let newRestaurants = [...restaurants].filter(e => e.id !== restaurant.id);
         console.log('restaurants after deletion', newRestaurants);
         setRestaurants(newRestaurants);
-        handleCancelEditRestaurant();
+        setSelectedRestaurant({});
     }
 
     /**
      * cancel edits
+     * or delete if newly added
      */
-    const handleCancelEditRestaurant = () => {
-        setSelectedRestaurant({});
+    const handleCancelEditRestaurant = (restaurant) => {
+        if (restaurant.isNew) {
+            handleDeleteRestaurant(restaurant)
+        } else {
+            setSelectedRestaurant({});
+        }
     }
 
     return (
@@ -66,6 +73,7 @@ export const Restaurant = ({ restaurant }) => {
             handleUpdateSelectedRestaurant={handleUpdateSelectedRestaurant}
             handleSaveRestaurant={handleSaveRestaurant}
             handleDeleteRestaurant={handleDeleteRestaurant}
+            handleCancelEditRestaurant={handleCancelEditRestaurant}
         />
     )
 }

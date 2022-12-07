@@ -17,7 +17,7 @@ export const UserActions = () => {
      * turn on/off edit mode
      */
     const handleSetEditMode = () => {
-        console.log('editMode', editMode);
+        // console.log('editMode', editMode);
         setEditMode(!editMode);
     }
 
@@ -35,7 +35,7 @@ export const UserActions = () => {
      * set new restaurant as selectedRestaurant
      */
      const handleAddRestaurant = () => {
-        let addedRestaurant = {...newRestaurant, id: getId()}
+        let addedRestaurant = {...newRestaurant, id: getId(), isNew: true}
         let newRestaurants = [...restaurants, addedRestaurant];
         console.log('new set of restaurants', newRestaurants);
         setRestaurants(newRestaurants);

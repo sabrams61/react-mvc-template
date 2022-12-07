@@ -7,7 +7,7 @@ import { ratings, prices } from '../../data';
  * @param {obj} { restaurant }
  * @return {HTML}
  */
-export const RestaurantView = ({ restaurant, handleSelectRestaurant, handleUpdateSelectedRestaurant, handleSaveRestaurant, handleDeleteRestaurant }) => {
+export const RestaurantView = ({ restaurant, handleSelectRestaurant, handleUpdateSelectedRestaurant, handleSaveRestaurant, handleDeleteRestaurant, handleCancelEditRestaurant }) => {
     const { selectedRestaurant, editMode } = useContext(RestaurantContext);
 
     return (
@@ -25,7 +25,7 @@ export const RestaurantView = ({ restaurant, handleSelectRestaurant, handleUpdat
                     </button>
                     <button
                         className="button action"
-                        onClick={() => handleSelectRestaurant({})}
+                        onClick={() => handleCancelEditRestaurant(restaurant)}
                     >
                         Cancel
                     </button>
