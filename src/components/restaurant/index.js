@@ -19,8 +19,9 @@ export const Restaurant = ({ restaurant }) => {
     }
 
     /**
-     * update values of selectedRestaurant
-     * @param {obj} restaurant
+     * update values of selectedRestaurant property
+     * @param {string} key - the property being updated
+     * @param {string or number} value
      */
     const handleUpdateSelectedRestaurant = (key, value) => {
         // console.log('edit to this restaurant', key, value);
@@ -29,6 +30,8 @@ export const Restaurant = ({ restaurant }) => {
 
     /**
      * save edits to restaurant
+     * update full list of restaurants
+     * reset selectedRestaurant
      */
     const handleSaveRestaurant = () => {
         let thisRestaurant = {...selectedRestaurant}
@@ -44,7 +47,9 @@ export const Restaurant = ({ restaurant }) => {
     }
 
     /**
-     * delete restaurant
+     * delete restaurant from restaurants
+     * update full list of restaurants
+     * reset selectedRestaurant
      */
     const handleDeleteRestaurant = (restaurant) => {
         console.log('delete this restaurant', restaurant);
@@ -56,7 +61,7 @@ export const Restaurant = ({ restaurant }) => {
 
     /**
      * cancel edits
-     * or delete if newly added
+     * or delete if newly added and not saved
      */
     const handleCancelEditRestaurant = (restaurant) => {
         if (restaurant.isNew) {

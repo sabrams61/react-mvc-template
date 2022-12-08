@@ -11,8 +11,13 @@ import { ResultsView } from './view';
  */
 export const Results = () => {
     const { restaurants, rating, price } = useContext(RestaurantContext);
+
+    /**
+     * filters restaurants where rating is greater or equal to selected value
+     * and price is less than or equal to selected value
+     */
     const filtered = restaurants.filter(
-        restaurant => restaurant.rating >= rating && restaurant.price >= price
+        restaurant => restaurant.rating >= rating && restaurant.price <= price
     );
 
     /**

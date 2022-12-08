@@ -17,12 +17,14 @@ export const RestaurantView = ({ restaurant, handleSelectRestaurant, handleUpdat
                 <li
                     className="active"
                 >
+                    {/* save */}
                     <button
                         className="button action save"
                         onClick={handleSaveRestaurant}
                     >
                         Save
                     </button>
+                    {/* cancel */}
                     <button
                         className="button action"
                         onClick={() => handleCancelEditRestaurant(restaurant)}
@@ -30,6 +32,7 @@ export const RestaurantView = ({ restaurant, handleSelectRestaurant, handleUpdat
                         Cancel
                     </button>
 
+                    {/* edit name */}
                     <input type="text"
                         value={selectedRestaurant.name}
                         placeholder="enter name..."
@@ -39,6 +42,7 @@ export const RestaurantView = ({ restaurant, handleSelectRestaurant, handleUpdat
 
                     <p>
                         {ratings.map(num => (
+                            // edit rating
                             <button
                                 key={num}
                                 onClick={() => {
@@ -53,6 +57,7 @@ export const RestaurantView = ({ restaurant, handleSelectRestaurant, handleUpdat
                         ))}
                         <br />
                         {prices.map(num => (
+                            // edit price
                             <button
                                 key={num}
                                 onClick={() => {
@@ -71,34 +76,40 @@ export const RestaurantView = ({ restaurant, handleSelectRestaurant, handleUpdat
                 <li>
                     {editMode && !selectedRestaurant.id &&
                         <>
+                            {/* edit */}
                             <button
                                 className="button action"
                                 onClick={() => handleSelectRestaurant(restaurant)}
                             >
                                 Edit
                             </button>
+                            {/* delete */}
                             <button
                                 className="button action delete"
                                 onClick={() => handleDeleteRestaurant(restaurant)}
                             >
                                 Delete
                             </button>
-                        </>                    }
+                        </>
+                    }
                     <h3>
                         {restaurant.name}
                     </h3>
+
                     <p>
-                    {[...Array(restaurant.rating)].map((_, n) => (
-                        <span role="img" aria-label="star" key={n}>
-                            ⭐️
-                        </span>
-                    ))}
-                    <br />
-                    {[...Array(restaurant.price)].map((_, n) => (
-                        <span role="img" aria-label="money bag" key={n}>
-                            💰
-                        </span>
-                    ))}
+                        {/* rating */}
+                        {[...Array(restaurant.rating)].map((_, n) => (
+                            <span role="img" aria-label="star" key={n}>
+                                ⭐️
+                            </span>
+                        ))}
+                        <br />
+                        {/* price */}
+                        {[...Array(restaurant.price)].map((_, n) => (
+                            <span role="img" aria-label="money bag" key={n}>
+                                💰
+                            </span>
+                        ))}
                     </p>
                 </li>
             )}

@@ -36,7 +36,7 @@ export const UserActionsView = ({ handleReset, handleSetEditMode, handleAddResta
                 {!editMode ? (
                     <>Edit Mode</>
                 ) : (
-                    <>Cancel Edit Mode</>
+                    <>Exit Edit Mode</>
                 )}
             </button>
         </div>
