@@ -1,7 +1,7 @@
 import React, { createContext, useReducer } from "react";
 import { actions } from './Actions';
 import { reducer } from './Reducer';
-import { restaurants } from '../data';
+import { restaurants, defaultRating, defaultPrice } from '../data';
 
 /**
  * context which needs to be imported into all children components
@@ -13,8 +13,8 @@ export const RestaurantContext = createContext();
  */
 export const initialState = {
     restaurants,
-    rating: 3,
-    price: 1,
+    rating: defaultRating,
+    price: defaultPrice,
     selectedRestaurant: {},
     editMode: false,
 };

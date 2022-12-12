@@ -48,7 +48,7 @@ export const RestaurantView = ({ restaurant, handleSelectRestaurant, handleUpdat
                                 onClick={() => {
                                     handleUpdateSelectedRestaurant('rating', num);
                                 }}
-                                className={num === selectedRestaurant.rating ? "selected" : ""}
+                                className={num <= selectedRestaurant.rating ? "selected" : ""}
                             >
                                 <span role="img" aria-label={`${num} star`}>
                                     ⭐️
@@ -63,7 +63,7 @@ export const RestaurantView = ({ restaurant, handleSelectRestaurant, handleUpdat
                                 onClick={() => {
                                     handleUpdateSelectedRestaurant('price', num);
                                 }}
-                                className={num === selectedRestaurant.price ? "selected" : ""}
+                                className={num <= selectedRestaurant.price ? "selected" : ""}
                             >
                                 <span role="img" aria-label={`${num} money bag`}>
                                     💰

@@ -9,7 +9,12 @@ export const restaurants = [
     { id: getId(), rating: 5, price: 2, name: "Ernesto's Enchiladas" },
     { id: getId(), rating: 4, price: 1, name: "Maria's Mole" },
     { id: getId(), rating: 1, price: 2, name: "Tito's Tacos" },
+    { id: getId(), rating: 3, price: 2, name: "Jammin' Jose's" },
 ];
+
+export const defaultRating = 3;
+
+export const defaultPrice = 2;
 
 export const ratings = [1, 2, 3, 4, 5];
 

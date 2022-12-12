@@ -8,7 +8,7 @@ import { RestaurantView } from './view'
  * @return {HTML}
  */
 export const Restaurant = ({ restaurant }) => {
-    const { selectedRestaurant, setSelectedRestaurant, restaurants, setRestaurants } = useContext(RestaurantContext);
+    const { selectedRestaurant, setSelectedRestaurant, restaurants, setRestaurants, setEditMode } = useContext(RestaurantContext);
 
     /**
      * select restaurant
@@ -35,7 +35,10 @@ export const Restaurant = ({ restaurant }) => {
      */
     const handleSaveRestaurant = () => {
         let thisRestaurant = {...selectedRestaurant}
-        delete thisRestaurant.isNew;
+        if (thisRestaurant.isNew) {
+            setEditMode(false);
+            delete thisRestaurant.isNew;
+        }
         console.log('save edits to this restaurant', thisRestaurant);
         if (thisRestaurant.name) {
             let pos = restaurants.findIndex(e => e.id === thisRestaurant.id);
@@ -65,6 +68,7 @@ export const Restaurant = ({ restaurant }) => {
      */
     const handleCancelEditRestaurant = (restaurant) => {
         if (restaurant.isNew) {
+            setEditMode(false);
             handleDeleteRestaurant(restaurant)
         } else {
             setSelectedRestaurant({});
