@@ -12,7 +12,7 @@ export const RestaurantView = ({ restaurant, handleSelectRestaurant, handleUpdat
 
     return (
         <>
-            {/* selected restaurant to edit */}
+            {/* EDIT MODE: selected restaurant to edit */}
             {selectedRestaurant.id === restaurant.id ? (
                 <li
                     className="active"
@@ -74,6 +74,7 @@ export const RestaurantView = ({ restaurant, handleSelectRestaurant, handleUpdat
                 </li>
             ) : (
                 <li>
+                    {/* EDIT MODEL: no selected restaurant */}
                     {editMode && !selectedRestaurant.id &&
                         <>
                             {/* edit */}
