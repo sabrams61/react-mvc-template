@@ -8,9 +8,9 @@ import { ratings, prices } from '../../data'
  * @return {HTML}
  */
 export const RestaurantView = ({ restaurant, handleSelectRestaurant, handleUpdateSelectedRestaurant, handleSaveRestaurant, handleDeleteRestaurant, handleCancelEditRestaurant }) => {
-  const { selectedRestaurant, editMode } = useContext(RestaurantContext)
+    const { selectedRestaurant, editMode } = useContext(RestaurantContext)
 
-  return (
+    return (
         <>
             {/* EDIT MODE: selected restaurant to edit */}
             {selectedRestaurant.id === restaurant.id ? (
@@ -46,7 +46,7 @@ export const RestaurantView = ({ restaurant, handleSelectRestaurant, handleUpdat
                             <button
                                 key={num}
                                 onClick={() => {
-                                  handleUpdateSelectedRestaurant('rating', num)
+                                    handleUpdateSelectedRestaurant('rating', num)
                                 }}
                                 className={num <= selectedRestaurant.rating ? 'selected' : ''}
                             >
@@ -61,7 +61,7 @@ export const RestaurantView = ({ restaurant, handleSelectRestaurant, handleUpdat
                             <button
                                 key={num}
                                 onClick={() => {
-                                  handleUpdateSelectedRestaurant('price', num)
+                                    handleUpdateSelectedRestaurant('price', num)
                                 }}
                                 className={num <= selectedRestaurant.price ? 'selected' : ''}
                             >
@@ -115,5 +115,5 @@ export const RestaurantView = ({ restaurant, handleSelectRestaurant, handleUpdat
                 </li>
             )}
         </>
-  )
+    )
 }

@@ -8,9 +8,9 @@ import React from 'react'
  * @return {*} HTML component
  */
 export const FooterView = () => {
-  return (
+    return (
         <footer>
             <p>&copy;2023 MassMutual</p>
         </footer>
-  )
+    )
 }

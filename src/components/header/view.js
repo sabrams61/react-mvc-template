@@ -8,11 +8,11 @@ import React from 'react'
  * @return {*} HTML component
  */
 export const HeaderView = () => {
-  return (
+    return (
         <header>
             <h3>
                 Filter Restaurants by Rating and Price
             </h3>
         </header>
-  )
+    )
 }

@@ -9,8 +9,8 @@ import { HeaderView } from './view'
  * @return {*} HTML component
  */
 export const Header = () => {
-  return (
+    return (
         <HeaderView
         />
-  )
+    )
 }

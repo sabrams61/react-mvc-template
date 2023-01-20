@@ -12,11 +12,11 @@ export const RestaurantContext = createContext()
  * set up initial (default) values of all state variables
  */
 export const initialState = {
-  restaurants,
-  rating: defaultRating,
-  price: defaultPrice,
-  selectedRestaurant: {},
-  editMode: false
+    restaurants,
+    rating: defaultRating,
+    price: defaultPrice,
+    selectedRestaurant: {},
+    editMode: false
 }
 
 /**
@@ -27,37 +27,37 @@ export const initialState = {
  * @return {*}
  */
 export const Provider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState)
+    const [state, dispatch] = useReducer(reducer, initialState)
 
-  const value = {
-    restaurants: state.restaurants,
-    rating: state.rating,
-    price: state.price,
-    selectedRestaurant: state.selectedRestaurant,
-    editMode: state.editMode,
-    setRestaurants: payload => {
-      dispatch({ type: actions.SET_RESTAURANTS, payload })
-    },
-    setRating: payload => {
-      dispatch({ type: actions.SET_RATING, payload })
-    },
-    setPrice: payload => {
-      dispatch({ type: actions.SET_PRICE, payload })
-    },
-    setSelectedRestaurant: payload => {
-      dispatch({ type: actions.SET_SELECTED_RESTAURANT, payload })
-    },
-    setEditMode: payload => {
-      dispatch({ type: actions.SET_EDIT_MODE, payload })
-    },
-    reset: () => {
-      dispatch({ type: actions.RESET })
+    const value = {
+        restaurants: state.restaurants,
+        rating: state.rating,
+        price: state.price,
+        selectedRestaurant: state.selectedRestaurant,
+        editMode: state.editMode,
+        setRestaurants: payload => {
+            dispatch({ type: actions.SET_RESTAURANTS, payload })
+        },
+        setRating: payload => {
+            dispatch({ type: actions.SET_RATING, payload })
+        },
+        setPrice: payload => {
+            dispatch({ type: actions.SET_PRICE, payload })
+        },
+        setSelectedRestaurant: payload => {
+            dispatch({ type: actions.SET_SELECTED_RESTAURANT, payload })
+        },
+        setEditMode: payload => {
+            dispatch({ type: actions.SET_EDIT_MODE, payload })
+        },
+        reset: () => {
+            dispatch({ type: actions.RESET })
+        }
     }
-  }
 
-  return (
+    return (
         <RestaurantContext.Provider value={value}>
             {children}
         </RestaurantContext.Provider>
-  )
+    )
 }

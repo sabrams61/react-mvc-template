@@ -10,9 +10,9 @@ import { ratings, prices } from '../../data'
  * @return {*} HTML component
  */
 export const FiltersView = ({ handleSetRating, handleSetPrice }) => {
-  const { rating, price } = useContext(RestaurantContext)
+    const { rating, price } = useContext(RestaurantContext)
 
-  return (
+    return (
         <div className="filters">
             {/* ratings */}
             <div className="ratings">
@@ -20,7 +20,7 @@ export const FiltersView = ({ handleSetRating, handleSetPrice }) => {
                     <button
                         key={num}
                         onClick={() => {
-                          handleSetRating(num)
+                            handleSetRating(num)
                         }}
                         className={rating >= num ? 'selected' : ''}
                     >
@@ -37,7 +37,7 @@ export const FiltersView = ({ handleSetRating, handleSetPrice }) => {
                     <button
                         key={num}
                         onClick={() => {
-                          handleSetPrice(num)
+                            handleSetPrice(num)
                         }}
                         className={price >= num ? 'selected' : ''}
                     >
@@ -48,5 +48,5 @@ export const FiltersView = ({ handleSetRating, handleSetPrice }) => {
                 ))}
             </div>
         </div>
-  )
+    )
 }

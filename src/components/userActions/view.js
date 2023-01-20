@@ -9,9 +9,9 @@ import { RestaurantContext } from '../../state/Provider'
  * @return {*} HTML component
  */
 export const UserActionsView = ({ handleReset, handleSetEditMode, handleAddRestaurant }) => {
-  const { editMode } = useContext(RestaurantContext)
+    const { editMode } = useContext(RestaurantContext)
 
-  return (
+    return (
         <div className="app-actions">
             {/* reset */}
             <button
@@ -34,13 +34,13 @@ export const UserActionsView = ({ handleReset, handleSetEditMode, handleAddResta
                 onClick={handleSetEditMode}
             >
                 {!editMode
-                  ? (
-                    <>Edit Mode</>
+                    ? (
+                        <>Edit Mode</>
                     )
-                  : (
-                    <>Exit Edit Mode</>
+                    : (
+                        <>Exit Edit Mode</>
                     )}
             </button>
         </div>
-  )
+    )
 }

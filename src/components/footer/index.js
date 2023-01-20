@@ -9,8 +9,8 @@ import { FooterView } from './view'
  * @return {*} HTML component
  */
 export const Footer = () => {
-  return (
+    return (
         <FooterView
         />
-  )
+    )
 }

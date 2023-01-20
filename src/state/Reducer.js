@@ -11,21 +11,21 @@ import { initialState } from './Provider'
  * @return {*}
  */
 export function reducer (state, action) {
-  console.log('reducer action', action)
-  switch (action.type) {
+    console.log('reducer action', action)
+    switch (action.type) {
     case actions.SET_RESTAURANTS:
-      return { ...state, restaurants: action.payload }
+        return { ...state, restaurants: action.payload }
     case actions.SET_RATING:
-      return { ...state, rating: action.payload, selectedRestaurant: {} }
+        return { ...state, rating: action.payload, selectedRestaurant: {} }
     case actions.SET_PRICE:
-      return { ...state, price: action.payload, selectedRestaurant: {} }
+        return { ...state, price: action.payload, selectedRestaurant: {} }
     case actions.SET_SELECTED_RESTAURANT:
-      return { ...state, selectedRestaurant: action.payload }
+        return { ...state, selectedRestaurant: action.payload }
     case actions.SET_EDIT_MODE:
-      return { ...state, editMode: action.payload }
+        return { ...state, editMode: action.payload }
     case actions.RESET:
-      return initialState
+        return initialState
     default:
-      return state
-  }
+        return state
+    }
 }

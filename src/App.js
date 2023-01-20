@@ -15,15 +15,15 @@ import { Footer } from './components/footer/index'
  * @return {*}
  */
 export default function App () {
-  return (
-    <main>
-        <Provider>
-            <Header />
-            <Filters />
-            <Results />
-            <UserActions />
-            <Footer />
-        </Provider>
-    </main>
-  )
+    return (
+        <main>
+            <Provider>
+                <Header />
+                <Filters />
+                <Results />
+                <UserActions />
+                <Footer />
+            </Provider>
+        </main>
+    )
 }
