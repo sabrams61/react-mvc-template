@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
-import { RestaurantContext } from '../../state/Provider';
-import { getId, newRestaurant } from '../../data';
-import { UserActionsView } from './view';
+import React, { useContext } from 'react'
+import { RestaurantContext } from '../../state/Provider'
+import { getId, newRestaurant } from '../../data'
+import { UserActionsView } from './view'
 
 /**
  * returns the filter options
@@ -11,45 +11,45 @@ import { UserActionsView } from './view';
  * @return {*} HTML component
  */
 export const UserActions = () => {
-    const { reset, editMode, setEditMode, setRestaurants, setSelectedRestaurant, restaurants, setPrice, setRating } = useContext(RestaurantContext);
+  const { reset, editMode, setEditMode, setRestaurants, setSelectedRestaurant, restaurants, setPrice, setRating } = useContext(RestaurantContext)
 
-    /**
+  /**
      * turn on/off edit mode
      */
-    const handleSetEditMode = () => {
-        // console.log('editMode', editMode);
-        setEditMode(!editMode);
-    }
+  const handleSetEditMode = () => {
+    // console.log('editMode', editMode);
+    setEditMode(!editMode)
+  }
 
-    /**
+  /**
      * reset all data
      */
-     const handleReset = () => {
-        reset();
-    }
+  const handleReset = () => {
+    reset()
+  }
 
-    /**
+  /**
      * add new restaurant (imported as newRestaurant) to restaurants
-     * set filters to lowest levels (1)
+     * set filters to lowest rating (1) and highest price (3) so all show up
      * set to edit mode
      * set new restaurant as selectedRestaurant
      */
-     const handleAddRestaurant = () => {
-        let addedRestaurant = {...newRestaurant, id: getId(), isNew: true}
-        let newRestaurants = [...restaurants, addedRestaurant];
-        console.log('new set of restaurants', newRestaurants);
-        setRestaurants(newRestaurants);
-        setPrice(1);
-        setRating(1);
-        setEditMode(true);
-        setSelectedRestaurant(addedRestaurant);
-    }
+  const handleAddRestaurant = () => {
+    const addedRestaurant = { ...newRestaurant, id: getId(), isNew: true }
+    const newRestaurants = [...restaurants, addedRestaurant]
+    console.log('new set of restaurants', newRestaurants)
+    setRestaurants(newRestaurants)
+    setPrice(3)
+    setRating(1)
+    setEditMode(true)
+    setSelectedRestaurant(addedRestaurant)
+  }
 
-    return (
+  return (
         <UserActionsView
             handleSetEditMode={handleSetEditMode}
             handleReset={handleReset}
             handleAddRestaurant={handleAddRestaurant}
         />
-    );
+  )
 }

@@ -1,6 +1,6 @@
-import React, { useContext} from "react";
-import { RestaurantContext } from '../../state/Provider';
-import { ratings, prices } from '../../data';
+import React, { useContext } from 'react'
+import { RestaurantContext } from '../../state/Provider'
+import { ratings, prices } from '../../data'
 
 /**
  * writes out individual restaurant listing
@@ -8,9 +8,9 @@ import { ratings, prices } from '../../data';
  * @return {HTML}
  */
 export const RestaurantView = ({ restaurant, handleSelectRestaurant, handleUpdateSelectedRestaurant, handleSaveRestaurant, handleDeleteRestaurant, handleCancelEditRestaurant }) => {
-    const { selectedRestaurant, editMode } = useContext(RestaurantContext);
+  const { selectedRestaurant, editMode } = useContext(RestaurantContext)
 
-    return (
+  return (
         <>
             {/* EDIT MODE: selected restaurant to edit */}
             {selectedRestaurant.id === restaurant.id ? (
@@ -46,9 +46,9 @@ export const RestaurantView = ({ restaurant, handleSelectRestaurant, handleUpdat
                             <button
                                 key={num}
                                 onClick={() => {
-                                    handleUpdateSelectedRestaurant('rating', num);
+                                  handleUpdateSelectedRestaurant('rating', num)
                                 }}
-                                className={num <= selectedRestaurant.rating ? "selected" : ""}
+                                className={num <= selectedRestaurant.rating ? 'selected' : ''}
                             >
                                 <span role="img" aria-label={`${num} star`}>
                                     ⭐️
@@ -61,9 +61,9 @@ export const RestaurantView = ({ restaurant, handleSelectRestaurant, handleUpdat
                             <button
                                 key={num}
                                 onClick={() => {
-                                    handleUpdateSelectedRestaurant('price', num);
+                                  handleUpdateSelectedRestaurant('price', num)
                                 }}
-                                className={num <= selectedRestaurant.price ? "selected" : ""}
+                                className={num <= selectedRestaurant.price ? 'selected' : ''}
                             >
                                 <span role="img" aria-label={`${num} money bag`}>
                                     💰
@@ -115,6 +115,5 @@ export const RestaurantView = ({ restaurant, handleSelectRestaurant, handleUpdat
                 </li>
             )}
         </>
-    )
+  )
 }
-

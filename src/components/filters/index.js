@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
-import { RestaurantContext } from '../../state/Provider';
-import { FiltersView } from './view';
+import React, { useContext } from 'react'
+import { RestaurantContext } from '../../state/Provider'
+import { FiltersView } from './view'
 
 /**
  * returns the filter options
@@ -10,28 +10,28 @@ import { FiltersView } from './view';
  * @return {*} HTML component
  */
 export const Filters = () => {
-    const { setRating, setPrice } = useContext(RestaurantContext);
+  const { setRating, setPrice } = useContext(RestaurantContext)
 
-    /**
+  /**
      * update the rating value for filter     *
      * @param {number} num
      */
-    const handleSetRating = (num) => {
-        setRating(num);
-    }
+  const handleSetRating = (num) => {
+    setRating(num)
+  }
 
-    /**
+  /**
      * update the price value for filter     *
      * @param {number} num
      */
-     const handleSetPrice = (num) => {
-        setPrice(num);
-    }
+  const handleSetPrice = (num) => {
+    setPrice(num)
+  }
 
-    return (
+  return (
         <FiltersView
             handleSetRating={handleSetRating}
             handleSetPrice={handleSetPrice}
         />
-    );
+  )
 }

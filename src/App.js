@@ -1,8 +1,10 @@
-import React from "react";
-import { Provider } from './state/Provider';
-import { Filters } from './components/filters/index';
-import { Results } from './components/results/index';
-import { UserActions } from './components/userActions/index';
+import React from 'react'
+import { Provider } from './state/Provider'
+import { Header } from './components/header/index'
+import { Filters } from './components/filters/index'
+import { Results } from './components/results/index'
+import { UserActions } from './components/userActions/index'
+import { Footer } from './components/footer/index'
 
 /**
  * all components are constructed inside of the Provider
@@ -12,14 +14,16 @@ import { UserActions } from './components/userActions/index';
  * @export
  * @return {*}
  */
-export default function App() {
+export default function App () {
   return (
     <main>
         <Provider>
+            <Header />
             <Filters />
             <Results />
             <UserActions />
+            <Footer />
         </Provider>
     </main>
-  );
+  )
 }

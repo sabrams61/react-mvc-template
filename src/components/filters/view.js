@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
-import { RestaurantContext } from '../../state/Provider';
-import { ratings, prices } from '../../data';
+import React, { useContext } from 'react'
+import { RestaurantContext } from '../../state/Provider'
+import { ratings, prices } from '../../data'
 
 /**
  * returns the filter options
@@ -10,28 +10,25 @@ import { ratings, prices } from '../../data';
  * @return {*} HTML component
  */
 export const FiltersView = ({ handleSetRating, handleSetPrice }) => {
-    const { rating, price } = useContext(RestaurantContext);
+  const { rating, price } = useContext(RestaurantContext)
 
-    return (
+  return (
         <div className="filters">
             {/* ratings */}
             <div className="ratings">
-                <h3>
-                    Filter Restaurants by Rating and Price
-                </h3>
                 {ratings.map(num => (
                     <button
                         key={num}
                         onClick={() => {
-                            handleSetRating(num);
+                          handleSetRating(num)
                         }}
-                        className={rating >= num ? "selected" : ""}
+                        className={rating >= num ? 'selected' : ''}
                     >
                         <span role="img" aria-label={`${num} star`}>
                             ⭐️
                         </span>
                     </button>
-                    ))}
+                ))}
             </div>
 
             {/* prices */}
@@ -40,9 +37,9 @@ export const FiltersView = ({ handleSetRating, handleSetPrice }) => {
                     <button
                         key={num}
                         onClick={() => {
-                            handleSetPrice(num);
+                          handleSetPrice(num)
                         }}
-                        className={price >= num ? "selected" : ""}
+                        className={price >= num ? 'selected' : ''}
                     >
                         <span role="img" aria-label={`${num} money bag`}>
                             💰
@@ -51,5 +48,5 @@ export const FiltersView = ({ handleSetRating, handleSetPrice }) => {
                 ))}
             </div>
         </div>
-    );
+  )
 }

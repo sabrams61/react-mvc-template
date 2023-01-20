@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { Restaurant } from '../restaurant/index'
 
 /**
@@ -9,8 +9,7 @@ import { Restaurant } from '../restaurant/index'
  * @return {HTML} HTML component
  */
 export const ResultsView = ({ sortedResults }) => {
-
-    return (
+  return (
         <ul>
             {sortedResults().map(restaurant => (
                 <Restaurant
@@ -19,5 +18,5 @@ export const ResultsView = ({ sortedResults }) => {
                 />
             ))}
         </ul>
-    );
+  )
 }

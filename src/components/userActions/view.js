@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { RestaurantContext } from '../../state/Provider';
+import React, { useContext } from 'react'
+import { RestaurantContext } from '../../state/Provider'
 
 /**
  * returns the filter options
@@ -9,9 +9,9 @@ import { RestaurantContext } from '../../state/Provider';
  * @return {*} HTML component
  */
 export const UserActionsView = ({ handleReset, handleSetEditMode, handleAddRestaurant }) => {
-    const { editMode } = useContext(RestaurantContext);
+  const { editMode } = useContext(RestaurantContext)
 
-    return (
+  return (
         <div className="app-actions">
             {/* reset */}
             <button
@@ -33,12 +33,14 @@ export const UserActionsView = ({ handleReset, handleSetEditMode, handleAddResta
                 className="button"
                 onClick={handleSetEditMode}
             >
-                {!editMode ? (
+                {!editMode
+                  ? (
                     <>Edit Mode</>
-                ) : (
+                    )
+                  : (
                     <>Exit Edit Mode</>
-                )}
+                    )}
             </button>
         </div>
-    );
+  )
 }
