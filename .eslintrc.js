@@ -4,6 +4,7 @@ module.exports = {
     es2021: true
   },
   extends: [
+    'eslint:recommended',
     'plugin:react/recommended',
     'standard'
   ],
@@ -22,5 +23,10 @@ module.exports = {
     'comma-dangle': ['error', 'always-multiline'],
     'multiline-ternary': ['error', 'always-multiline']
     // 'react/prop-types': ['off'],
+  },
+  settings: {
+    'react': {
+        'version': 'detect'
+    }
   }
 }

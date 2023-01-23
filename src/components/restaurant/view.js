@@ -116,7 +116,8 @@ export const RestaurantView = ({ restaurant, handleSelectRestaurant, handleUpdat
                             ))}
                         </p>
                     </li>
-                )}
+                )
+            }
         </>
     )
 }
