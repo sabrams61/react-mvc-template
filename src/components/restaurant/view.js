@@ -123,7 +123,7 @@ export const RestaurantView = ({ restaurant, handleSelectRestaurant, handleUpdat
 }
 
 RestaurantView.propTypes = {
-    restaurant: PropTypes.obj,
+    restaurant: PropTypes.object,
     handleSelectRestaurant: PropTypes.func,
     handleUpdateSelectedRestaurant: PropTypes.func,
     handleSaveRestaurant: PropTypes.func,

@@ -64,5 +64,5 @@ export const Provider = ({ children }) => {
 }
 
 Provider.propTypes = {
-    children: PropTypes.any,
+    children: PropTypes.arrayOf(PropTypes.element),
 }

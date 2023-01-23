@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { FooterView } from './view'
 
 /**
@@ -14,8 +13,4 @@ export const Footer = () => {
         <FooterView
         />
     )
-}
-
-Footer.propTypes = {
-    children: PropTypes.any,
 }

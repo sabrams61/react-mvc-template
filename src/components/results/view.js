@@ -23,5 +23,5 @@ export const ResultsView = ({ sortedResults }) => {
 }
 
 ResultsView.propTypes = {
-    sortedResults: PropTypes.array,
+    sortedResults: PropTypes.func,
 }

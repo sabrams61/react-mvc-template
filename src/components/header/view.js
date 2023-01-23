@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 /**
  * returns the header
@@ -16,8 +15,4 @@ export const HeaderView = () => {
             </h3>
         </header>
     )
-}
-
-HeaderView.propTypes = {
-    children: PropTypes.any,
 }
