@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import PropTypes from 'prop-types'
 import { RestaurantContext } from '../../state/Provider'
 
 /**
@@ -43,4 +44,10 @@ export const UserActionsView = ({ handleReset, handleSetEditMode, handleAddResta
             </button>
         </div>
     )
+}
+
+UserActionsView.propTypes = {
+    handleReset: PropTypes.func,
+    handleSetEditMode: PropTypes.func,
+    handleAddRestaurant: PropTypes.func,
 }

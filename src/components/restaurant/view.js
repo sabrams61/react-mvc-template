@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import PropTypes from 'prop-types'
 import { RestaurantContext } from '../../state/Provider'
 import { ratings, prices } from '../../data'
 
@@ -13,69 +14,71 @@ export const RestaurantView = ({ restaurant, handleSelectRestaurant, handleUpdat
     return (
         <>
             {/* EDIT MODE: selected restaurant to edit */}
-            {selectedRestaurant.id === restaurant.id ? (
-                <li
-                    className="active"
-                >
-                    {/* save */}
-                    <button
-                        className="button action save"
-                        onClick={handleSaveRestaurant}
+            {selectedRestaurant.id === restaurant.id
+                ? (
+                    <li
+                        className="active"
                     >
+                        {/* save */}
+                        <button
+                            className="button action save"
+                            onClick={handleSaveRestaurant}
+                        >
                         Save
-                    </button>
-                    {/* cancel */}
-                    <button
-                        className="button action"
-                        onClick={() => handleCancelEditRestaurant(restaurant)}
-                    >
+                        </button>
+                        {/* cancel */}
+                        <button
+                            className="button action"
+                            onClick={() => handleCancelEditRestaurant(restaurant)}
+                        >
                         Cancel
-                    </button>
+                        </button>
 
-                    {/* edit name */}
-                    <input type="text"
-                        value={selectedRestaurant.name}
-                        placeholder="enter name..."
-                        name="name"
-                        onChange={(e) => handleUpdateSelectedRestaurant('name', e.target.value)}
-                    />
+                        {/* edit name */}
+                        <input type="text"
+                            value={selectedRestaurant.name}
+                            placeholder="enter name..."
+                            name="name"
+                            onChange={(e) => handleUpdateSelectedRestaurant('name', e.target.value)}
+                        />
 
-                    <p>
-                        {ratings.map(num => (
+                        <p>
+                            {ratings.map(num => (
                             // edit rating
-                            <button
-                                key={num}
-                                onClick={() => {
-                                    handleUpdateSelectedRestaurant('rating', num)
-                                }}
-                                className={num <= selectedRestaurant.rating ? 'selected' : ''}
-                            >
-                                <span role="img" aria-label={`${num} star`}>
+                                <button
+                                    key={num}
+                                    onClick={() => {
+                                        handleUpdateSelectedRestaurant('rating', num)
+                                    }}
+                                    className={num <= selectedRestaurant.rating ? 'selected' : ''}
+                                >
+                                    <span role="img" aria-label={`${num} star`}>
                                     ⭐️
-                                </span>
-                            </button>
-                        ))}
-                        <br />
-                        {prices.map(num => (
+                                    </span>
+                                </button>
+                            ))}
+                            <br />
+                            {prices.map(num => (
                             // edit price
-                            <button
-                                key={num}
-                                onClick={() => {
-                                    handleUpdateSelectedRestaurant('price', num)
-                                }}
-                                className={num <= selectedRestaurant.price ? 'selected' : ''}
-                            >
-                                <span role="img" aria-label={`${num} money bag`}>
+                                <button
+                                    key={num}
+                                    onClick={() => {
+                                        handleUpdateSelectedRestaurant('price', num)
+                                    }}
+                                    className={num <= selectedRestaurant.price ? 'selected' : ''}
+                                >
+                                    <span role="img" aria-label={`${num} money bag`}>
                                     💰
-                                </span>
-                            </button>
-                        ))}
-                    </p>
-                </li>
-            ) : (
-                <li>
-                    {/* EDIT MODEL: no selected restaurant */}
-                    {editMode && !selectedRestaurant.id &&
+                                    </span>
+                                </button>
+                            ))}
+                        </p>
+                    </li>
+                )
+                : (
+                    <li>
+                        {/* EDIT MODEL: no selected restaurant */}
+                        {editMode && !selectedRestaurant.id &&
                         <>
                             {/* edit */}
                             <button
@@ -92,28 +95,37 @@ export const RestaurantView = ({ restaurant, handleSelectRestaurant, handleUpdat
                                 Delete
                             </button>
                         </>
-                    }
-                    <h3>
-                        {restaurant.name}
-                    </h3>
+                        }
+                        <h3>
+                            {restaurant.name}
+                        </h3>
 
-                    <p>
-                        {/* rating */}
-                        {[...Array(restaurant.rating)].map((_, n) => (
-                            <span role="img" aria-label="star" key={n}>
+                        <p>
+                            {/* rating */}
+                            {[...Array(restaurant.rating)].map((_, n) => (
+                                <span role="img" aria-label="star" key={n}>
                                 ⭐️
-                            </span>
-                        ))}
-                        <br />
-                        {/* price */}
-                        {[...Array(restaurant.price)].map((_, n) => (
-                            <span role="img" aria-label="money bag" key={n}>
+                                </span>
+                            ))}
+                            <br />
+                            {/* price */}
+                            {[...Array(restaurant.price)].map((_, n) => (
+                                <span role="img" aria-label="money bag" key={n}>
                                 💰
-                            </span>
-                        ))}
-                    </p>
-                </li>
-            )}
+                                </span>
+                            ))}
+                        </p>
+                    </li>
+                )}
         </>
     )
+}
+
+RestaurantView.propTypes = {
+    restaurant: PropTypes.obj,
+    handleSelectRestaurant: PropTypes.func,
+    handleUpdateSelectedRestaurant: PropTypes.func,
+    handleSaveRestaurant: PropTypes.func,
+    handleDeleteRestaurant: PropTypes.func,
+    handleCancelEditRestaurant: PropTypes.func,
 }

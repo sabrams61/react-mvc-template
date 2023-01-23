@@ -1,4 +1,5 @@
 import React, { createContext, useReducer } from 'react'
+import PropTypes from 'prop-types'
 import { actions } from './Actions'
 import { reducer } from './Reducer'
 import { restaurants, defaultRating, defaultPrice } from '../data'
@@ -16,7 +17,7 @@ export const initialState = {
     rating: defaultRating,
     price: defaultPrice,
     selectedRestaurant: {},
-    editMode: false
+    editMode: false,
 }
 
 /**
@@ -52,7 +53,7 @@ export const Provider = ({ children }) => {
         },
         reset: () => {
             dispatch({ type: actions.RESET })
-        }
+        },
     }
 
     return (
@@ -60,4 +61,8 @@ export const Provider = ({ children }) => {
             {children}
         </RestaurantContext.Provider>
     )
+}
+
+Provider.propTypes = {
+    children: PropTypes.any,
 }

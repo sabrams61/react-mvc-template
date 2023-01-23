@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import PropTypes from 'prop-types'
 import { RestaurantContext } from '../../state/Provider'
 import { RestaurantView } from './view'
 
@@ -85,4 +86,8 @@ export const Restaurant = ({ restaurant }) => {
             handleCancelEditRestaurant={handleCancelEditRestaurant}
         />
     )
+}
+
+Restaurant.propTypes = {
+    restaurant: PropTypes.object,
 }

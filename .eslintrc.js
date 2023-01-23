@@ -18,7 +18,9 @@ module.exports = {
     'react'
   ],
   rules: {
-    'indent': ["error", 4],
-    'react/prop-types': ['off'],
+    'indent': ['error', 4],
+    'comma-dangle': ['error', 'always-multiline'],
+    'multiline-ternary': ['error', 'always-multiline']
+    // 'react/prop-types': ['off'],
   }
 }

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import PropTypes from 'prop-types'
 import { RestaurantContext } from '../../state/Provider'
 import { ResultsView } from './view'
 
@@ -17,7 +18,7 @@ export const Results = () => {
      * and price is less than or equal to selected value
      */
     const filtered = restaurants.filter(
-        restaurant => restaurant.rating >= rating && restaurant.price <= price
+        restaurant => restaurant.rating >= rating && restaurant.price <= price,
     )
 
     /**
@@ -25,7 +26,7 @@ export const Results = () => {
      */
     const sortedResults = () => {
         return filtered.sort((a, b) =>
-            a.name.toLowerCase().localeCompare(b.name.toLowerCase())
+            a.name.toLowerCase().localeCompare(b.name.toLowerCase()),
         )
     }
 
@@ -34,4 +35,8 @@ export const Results = () => {
             sortedResults={sortedResults}
         />
     )
+}
+
+Results.propTypes = {
+    children: PropTypes.any,
 }

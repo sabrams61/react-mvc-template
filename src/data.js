@@ -9,7 +9,7 @@ export const restaurants = [
     { id: getId(), rating: 5, price: 2, name: "Ernesto's Enchiladas" },
     { id: getId(), rating: 4, price: 1, name: "Maria's Mole" },
     { id: getId(), rating: 1, price: 2, name: "Tito's Tacos" },
-    { id: getId(), rating: 3, price: 2, name: "Jammin' Jose's" }
+    { id: getId(), rating: 3, price: 2, name: "Jammin' Jose's" },
 ]
 
 export const defaultRating = 3
@@ -24,5 +24,5 @@ export const newRestaurant = {
     id: null,
     rating: 1,
     price: 1,
-    name: ''
+    name: '',
 }

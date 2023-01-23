@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import PropTypes from 'prop-types'
 import { RestaurantContext } from '../../state/Provider'
 import { getId, newRestaurant } from '../../data'
 import { UserActionsView } from './view'
@@ -52,4 +53,8 @@ export const UserActions = () => {
             handleAddRestaurant={handleAddRestaurant}
         />
     )
+}
+
+UserActions.propTypes = {
+    children: PropTypes.any,
 }

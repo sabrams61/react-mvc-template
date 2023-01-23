@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 /**
  * returns the footer
@@ -13,4 +14,8 @@ export const FooterView = () => {
             <p>&copy;2023 MassMutual</p>
         </footer>
     )
+}
+
+FooterView.propTypes = {
+    children: PropTypes.any,
 }

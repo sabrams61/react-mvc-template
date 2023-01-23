@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Restaurant } from '../restaurant/index'
 
 /**
@@ -19,4 +20,8 @@ export const ResultsView = ({ sortedResults }) => {
             ))}
         </ul>
     )
+}
+
+ResultsView.propTypes = {
+    sortedResults: PropTypes.array,
 }

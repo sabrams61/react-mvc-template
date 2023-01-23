@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import PropTypes from 'prop-types'
 import { RestaurantContext } from '../../state/Provider'
 import { ratings, prices } from '../../data'
 
@@ -49,4 +50,9 @@ export const FiltersView = ({ handleSetRating, handleSetPrice }) => {
             </div>
         </div>
     )
+}
+
+FiltersView.propTypes = {
+    handleSetRating: PropTypes.func,
+    handleSetPrice: PropTypes.func,
 }
