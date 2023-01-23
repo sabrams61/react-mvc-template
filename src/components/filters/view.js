@@ -53,6 +53,6 @@ export const FiltersView = ({ handleSetRating, handleSetPrice }) => {
 }
 
 FiltersView.propTypes = {
-    handleSetRating: PropTypes.func,
-    handleSetPrice: PropTypes.func,
+    handleSetRating: PropTypes.func.isRequired,
+    handleSetPrice: PropTypes.func.isRequired,
 }

@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import PropTypes from 'prop-types'
 import { RestaurantContext } from '../../state/Provider'
 import { FiltersView } from './view'
 
@@ -35,8 +34,4 @@ export const Filters = () => {
             handleSetPrice={handleSetPrice}
         />
     )
-}
-
-Filters.propTypes = {
-    children: PropTypes.any,
 }

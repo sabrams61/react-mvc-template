@@ -89,5 +89,10 @@ export const Restaurant = ({ restaurant }) => {
 }
 
 Restaurant.propTypes = {
-    restaurant: PropTypes.object,
+    restaurant: PropTypes.shape({
+        id: PropTypes.string,
+        rating: PropTypes.number,
+        price: PropTypes.number,
+        name: PropTypes.string,
+    }).isRequired,
 }

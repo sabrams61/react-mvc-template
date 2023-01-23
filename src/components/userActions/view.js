@@ -48,7 +48,7 @@ export const UserActionsView = ({ handleReset, handleSetEditMode, handleAddResta
 }
 
 UserActionsView.propTypes = {
-    handleReset: PropTypes.func,
-    handleSetEditMode: PropTypes.func,
-    handleAddRestaurant: PropTypes.func,
+    handleReset: PropTypes.func.isRequired,
+    handleSetEditMode: PropTypes.func.isRequired,
+    handleAddRestaurant: PropTypes.func.isRequired,
 }

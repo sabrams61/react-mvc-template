@@ -123,10 +123,15 @@ export const RestaurantView = ({ restaurant, handleSelectRestaurant, handleUpdat
 }
 
 RestaurantView.propTypes = {
-    restaurant: PropTypes.object,
-    handleSelectRestaurant: PropTypes.func,
-    handleUpdateSelectedRestaurant: PropTypes.func,
-    handleSaveRestaurant: PropTypes.func,
-    handleDeleteRestaurant: PropTypes.func,
-    handleCancelEditRestaurant: PropTypes.func,
+    restaurant: PropTypes.shape({
+        id: PropTypes.string,
+        rating: PropTypes.number,
+        price: PropTypes.number,
+        name: PropTypes.string,
+    }).isRequired,
+    handleSelectRestaurant: PropTypes.func.isRequired,
+    handleUpdateSelectedRestaurant: PropTypes.func.isRequired,
+    handleSaveRestaurant: PropTypes.func.isRequired,
+    handleDeleteRestaurant: PropTypes.func.isRequired,
+    handleCancelEditRestaurant: PropTypes.func.isRequired,
 }
