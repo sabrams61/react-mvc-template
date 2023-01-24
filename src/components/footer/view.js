@@ -10,7 +10,9 @@ import React from 'react'
 export const FooterView = () => {
     return (
         <footer>
-            <p>&copy;2023 MassMutual</p>
+            <p>
+                &copy;2023 MassMutual
+            </p>
         </footer>
     )
 }
