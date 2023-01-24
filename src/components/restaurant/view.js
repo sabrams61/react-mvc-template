@@ -24,14 +24,14 @@ export const RestaurantView = ({ restaurant, handleSelectRestaurant, handleUpdat
                             className="button action save"
                             onClick={handleSaveRestaurant}
                         >
-                        Save
+                            Save
                         </button>
                         {/* cancel */}
                         <button
                             className="button action"
                             onClick={() => handleCancelEditRestaurant(restaurant)}
                         >
-                        Cancel
+                            Cancel
                         </button>
 
                         {/* edit name */}
@@ -53,7 +53,7 @@ export const RestaurantView = ({ restaurant, handleSelectRestaurant, handleUpdat
                                     className={num <= selectedRestaurant.rating ? 'selected' : ''}
                                 >
                                     <span role="img" aria-label={`${num} star`}>
-                                    ⭐️
+                                        ⭐️
                                     </span>
                                 </button>
                             ))}
@@ -68,7 +68,7 @@ export const RestaurantView = ({ restaurant, handleSelectRestaurant, handleUpdat
                                     className={num <= selectedRestaurant.price ? 'selected' : ''}
                                 >
                                     <span role="img" aria-label={`${num} money bag`}>
-                                    💰
+                                        💰
                                     </span>
                                 </button>
                             ))}
@@ -104,14 +104,14 @@ export const RestaurantView = ({ restaurant, handleSelectRestaurant, handleUpdat
                             {/* rating */}
                             {[...Array(restaurant.rating)].map((_, n) => (
                                 <span role="img" aria-label="star" key={n}>
-                                ⭐️
+                                    ⭐️
                                 </span>
                             ))}
                             <br />
                             {/* price */}
                             {[...Array(restaurant.price)].map((_, n) => (
                                 <span role="img" aria-label="money bag" key={n}>
-                                💰
+                                    💰
                                 </span>
                             ))}
                         </p>

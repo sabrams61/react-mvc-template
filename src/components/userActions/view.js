@@ -17,7 +17,8 @@ export const UserActionsView = ({ handleReset, handleSetEditMode, handleAddResta
             {/* reset */}
             <button
                 className="button"
-                onClick={handleReset}>
+                onClick={handleReset}
+            >
                 Reset
             </button>
 

@@ -1,10 +1,10 @@
 import React from 'react'
 import { Provider } from './state/Provider'
-import { Header } from './components/header/index'
-import { Filters } from './components/filters/index'
-import { Results } from './components/results/index'
-import { UserActions } from './components/userActions/index'
-import { Footer } from './components/footer/index'
+import { Header } from './components/header'
+import { Filters } from './components/filters'
+import { Results } from './components/results'
+import { UserActions } from './components/userActions'
+import { Footer } from './components/footer'
 
 /**
  * all components are constructed inside of the Provider
