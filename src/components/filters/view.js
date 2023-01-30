@@ -23,7 +23,7 @@ export const FiltersView = ({ handleSetRating, handleSetPrice }) => {
                         onClick={() => {
                             handleSetRating(num)
                         }}
-                        className={rating >= num ? 'selected' : ''}
+                        className={rating >= num && 'selected'}
                     >
                         <span role="img" aria-label={`${num} star`}>
                             ⭐️
@@ -40,7 +40,7 @@ export const FiltersView = ({ handleSetRating, handleSetPrice }) => {
                         onClick={() => {
                             handleSetPrice(num)
                         }}
-                        className={price >= num ? 'selected' : ''}
+                        className={price >= num && 'selected'}
                     >
                         <span role="img" aria-label={`${num} money bag`}>
                             💰
