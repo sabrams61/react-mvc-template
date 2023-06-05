@@ -1,5 +1,7 @@
 /**
  * all actions that can update the state
+ * these are imported into the Reducer
+ * currently this is just a mapping
  */
 export const actions = {
     SET_RESTAURANTS: 'SET_RESTAURANTS',
